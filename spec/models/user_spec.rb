@@ -12,5 +12,7 @@ require 'rails_helper'
         it{is_expected.to validate_confirmation_of(:password)}
         
         it{is_expected.to allow_value("teste@supergeeks.com.br").for(:email)}
+        
+        it { is_expected.to validate_uniqueness_of(:auth_token)}
 	end
 
