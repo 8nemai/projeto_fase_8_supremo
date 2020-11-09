@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     
-  validates_uniqueness_of :auto_token
+  validates_uniqueness_of :auth_token
     
   before_create :generate_authentication_token!
 

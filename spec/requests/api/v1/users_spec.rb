@@ -4,7 +4,7 @@ require 'rails_helper'
 
         let!(:user) {create(:user)}
         let(:user_id) {user.id}
-        let(:headers) { { "Accept" => "application/vnd.projetofase8.v1"} } # Essa linha serviu para evitar repetição no Header do CRUD
+        let(:headers) { { "Accept" => "application/vnd.projetofase8.v1", "Authorization" => user.auth_token} } # Essa linha serviu para evitar repetição no Header do CRUD
         
 
 		
