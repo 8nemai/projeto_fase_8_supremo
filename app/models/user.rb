@@ -7,6 +7,12 @@ class User < ApplicationRecord
   validates_uniqueness_of :auth_token
     
   before_create :generate_authentication_token!
+    
+  has_many :ganhos, dependent: :destroy 
+
+  has_many :despesas, dependent: :destroy
+
+
 
 	def info 
 

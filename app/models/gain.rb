@@ -1,0 +1,2 @@
+class Gain < ApplicationRecord
+end
