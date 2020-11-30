@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     
 		namespace :api, defaults:  {format: :json} do 
 			
-			namespace :v1, path:"/", constraints: ApiVersionConstraint.new(version:1, default: true) do
+			namespace :v1, path:"/", constraints: ApiVersionConstraint.new(version:1) do
 				
 				resources :users
                 resources :sessions
@@ -18,6 +18,16 @@ Rails.application.routes.draw do
 
 			end
 
+            namespace :v2, path:"/", constraints: ApiVersionConstraint.new(version:2, default: true) do
+				
+				resources :users
+                resources :sessions
+                resources :ganhos
+                resources :despesas
+
+
+			end
+            
 		end
 
 	end

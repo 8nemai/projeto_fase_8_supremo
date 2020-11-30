@@ -1,13 +1,13 @@
-class Api::V1::GanhosController < ApplicationController
+class Api::V2::GanhosController < ApplicationController
     
     before_action :authenticate_with_token!
 
 	def index 
 
 
-		ganhos = current_user.ganhos
+		ganhos = current_user.ganhos.ransack(params[:q]).result
 
-		render json: {ganhos: ganhos}, status: 200
+		render json: ganhos, status: 200
 
 
 	end
