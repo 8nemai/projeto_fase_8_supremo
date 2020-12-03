@@ -1,4 +1,4 @@
-class Api::V1::GanhosController < ApplicationController
+class Api::V1::GanhosController <  Api::V1::BaseController 
     
     before_action :authenticate_with_token!
 
